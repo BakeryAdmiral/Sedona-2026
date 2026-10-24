@@ -2,7 +2,7 @@
 
 * Студент: [Сергей Владимиров](https://up.htmlacademy.ru/htmlcss-individual/3/user/2587771).
 * Наставник: [Виктория Никитина](https://htmlacademy.ru/profile/id1217273).
-[Адрес проекта](https://bakeryadmiral.github.io/Sedona-2026/).
+* Сайт: [Адрес проекта](https://bakeryadmiral.github.io/Sedona-2026/).
 ---
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
