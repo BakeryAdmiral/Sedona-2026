@@ -33,6 +33,7 @@
   --base-blue: #82b3d3;
   --secondary-blue: #68a2ca;
   --primary-blue: #3f5e72;
+  --light-blue-opacity: rgba(104, 162, 202, 0.3);
 
   --base-green: #7db54f;
   --secondary-green: #6c9e42;
@@ -294,6 +295,7 @@ label {
 }
 
 .user-panel__favorites {
+  position: relative;
   padding: 12px;
 
   text-decoration: none;
@@ -301,7 +303,21 @@ label {
 }
 
 .user-panel__favorites-counter {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 2px;
 
+  font-size: 10px;
+  line-height: 10px;
+  color: var(--base-white);
+
+  background-color: var(--base-green);
+  border-radius: 50%;
 }
 
 .user-panel__button {
@@ -494,6 +510,20 @@ label {
   justify-content: center;
   width: 48px;
   height: 40px;
+
+  color: var(--base-blue);
+
+  &:hover {
+    color: var(--secondary-blue);
+  }
+
+  &:focus {
+    color: var(--secondary-blue);
+  }
+
+  &:active {
+    color: var(--light-blue-opacity);
+  }
 }
 
 .footer__phone {
@@ -501,10 +531,34 @@ label {
   line-height: 40px;
   text-decoration: none;
   color: var(--base-dark);
+
+  &:hover {
+    color: var(--base-brown);
+  }
+
+  &:focus {
+    color: var(--base-brown);
+  }
+
+  &:active {
+    color: var(--light-brown-opacity);
+  }
 }
 
 .footer__partner-logo {
+  color: var(--base-dark);
 
+  &:hover {
+    color: var(--base-brown);
+  }
+
+  &:focus {
+    color: var(--base-brown);
+  }
+
+  &:active {
+    color: var(--light-brown-opacity);
+  }
 }
 
 .catalog {
