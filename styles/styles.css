@@ -334,7 +334,7 @@ label {
   height: 485px;
 
   background-color: var(--base-gray-1);
-  background-image: url("../img/background-images/index-background.jpg");
+  background-image: url("./img/background-images/index-background.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -348,7 +348,7 @@ label {
     right: 0;
 
     background-color: var(--base-white);
-    mask-image: url("../img/background-images/hero-mask.svg");
+    mask-image: url("./img/background-images/hero-mask.svg");
     mask-repeat: no-repeat;
     mask-position: bottom;
     mask-size: 100%;
