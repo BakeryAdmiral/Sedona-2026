@@ -334,7 +334,7 @@ label {
   height: 485px;
 
   background-color: var(--base-gray-1);
-  background-image: url("img/background-images/index-background.jpg");
+  background-image: url("/img/background-images/index-background.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -348,7 +348,7 @@ label {
     right: 0;
 
     background-color: var(--base-white);
-    mask-image: url("img/background-images/hero-mask.svg");
+    mask-image: url("/img/background-images/hero-mask.svg");
     mask-repeat: no-repeat;
     mask-position: bottom;
     mask-size: 100%;
@@ -360,63 +360,42 @@ label {
   margin-inline: auto;
 }
 
+.features {
+
+}
+
 .features__intro {
-  padding: 69px 270px 90px;
+
 }
 
 .features__intro-heading {
-  margin-bottom: 25px;
-
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  text-align: center;
   text-transform: uppercase;
 }
 
 .features__intro-text {
   font-size: 22px;
   line-height: 26px;
-  text-align: center;
 }
 
 .features__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
 }
 
 .features__item {
-  min-height: 385px;
-}
 
-.features__item--special {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column: 1 / -1;
-
-  color: var(--base-white);
-  background-color: var(--base-blue);
-}
-
-.features__item--special .features__heading {
-  color: var(--base-white);
 }
 
 .features__content {
-  padding: 112px 85px;
-}
 
-.features__item--special .features__content {
-  padding: 102px 85px;
 }
 
 .features__heading {
-  margin-bottom: 62px;
-
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  text-align: center;
   text-transform: uppercase;
   color: var(--base-dark);
 }
@@ -424,16 +403,10 @@ label {
 .features__text {
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
 }
 
-.features__picture--right {
-  grid-column: 2 / -1;
-}
+.features__picture {
 
-.features__picture--left {
-  order: -1;
-  grid-column: 1 / 3;
 }
 
 .services {
