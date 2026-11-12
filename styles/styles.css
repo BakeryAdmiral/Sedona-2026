@@ -759,6 +759,14 @@
   color: var(--base-white);
 }
 
+.breadcrumbs__link:hover {
+  color: var(--text-light-opacity-2);
+}
+
+.breadcrumbs__link:active {
+  color: var(--text-light-opacity-1);
+}
+
 .breadcrumbs__link--home {
   width: 15px;
   height: 13px;
@@ -822,8 +830,34 @@
   background-color: var(--base-white);
 }
 
+.fieldset__control-label {
+  font-size: 18px;
+  line-height: 23px;
+  color: var(--base-white);
+}
+
 .fieldset__input[type="checkbox"] + .fieldset__control-mark {
   border-radius: 4px;
+}
+
+.fieldset__input:hover + .fieldset__control-mark {
+  opacity: 60%;
+}
+
+.fieldset__input:hover ~ .fieldset__control-label {
+  color: var(--text-light-opacity-2);
+}
+
+.fieldset__input:focus + .fieldset__control-mark {
+  outline: 3px solid var(--base-blue);
+}
+
+.fieldset__input:active + .fieldset__control-mark {
+  opacity: 30%;
+}
+
+.fieldset__input:active ~ .fieldset__control-label {
+  color: var(--text-light-opacity-1);
 }
 
 .fieldset__input[type="checkbox"]:checked + .fieldset__control-mark::after {
@@ -856,12 +890,6 @@
   border-radius: 50%;
 }
 
-.fieldset__control-label {
-  font-size: 18px;
-  line-height: 23px;
-  color: var(--base-white);
-}
-
 .range {
   display: flex;
   flex-direction: column;
@@ -887,8 +915,18 @@
   font-size: 18px;
   line-height: 24px;
 
+  background-color: var(--base-gray-2);
   border: none;
   border-radius: 4px;
+}
+
+.range__filter-input:hover {
+  background-color: var(--base-gray-3);
+}
+
+.range__filter-input:focus {
+  background-color: var(--base-gray-3);
+  outline: 3px solid var(--base-blue);
 }
 
 .range__input:first-child .range__filter-input {
@@ -938,6 +976,18 @@
   border-radius: 5px;
 }
 
+.range__toggle:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.251);
+}
+
+.range__toggle:focus {
+  outline: 3px solid var(--base-blue);
+}
+
+.range__toggle:active {
+  outline: 2px solid var(--base-blue);
+}
+
 .range__toggle--min {
   left: 0;
 }
@@ -963,6 +1013,27 @@
   background-color: transparent;
 }
 
+.catalog__filter-reset-button:hover {
+  color: var(--text-light-opacity-2);
+  background-color: transparent;
+}
+
+.catalog__filter-reset-button:focus {
+  color: var(--base-white);
+  background-color: transparent;
+  outline: 3px solid var(--base-blue);
+}
+
+.catalog__filter-reset-button:active {
+  color: var(--text-light-opacity-1);
+  background-color: transparent;
+}
+
+.catalog__filter-reset-button:disabled {
+  color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+}
+
 .sorting {
   padding: 50px 70px 60px;
 }
@@ -985,6 +1056,7 @@
 }
 
 .sorting__mod {
+  position: relative;
   margin-right: 70px;
 }
 
@@ -1002,6 +1074,37 @@
   border-radius: 4px;
 }
 
+.sorting__mod::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 7px;
+  top: 21px;
+  right: 20px;
+
+  background-image: url("../img/icons/arrow-select.svg");
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: center;
+}
+
+.sorting__select:hover {
+  border-color: var(--secondary-blue);
+}
+
+.sorting__select:focus {
+  border-color: var(--secondary-blue);
+  outline: none;
+}
+
+.sorting__select:disabled {
+  border-color: var(--base-dark-opacity);
+}
+
+.sorting__select:hover:disabled {
+  opacity: 30%;
+}
+
 .sorting__view {
   display: flex;
   column-gap: 8px;
@@ -1010,31 +1113,39 @@
   list-style: none;
 }
 
-.sorting__view-item {
-  width: 48px;
-  height: 48px;
-
-  border: 2px solid var(--base-gray-1);
-  border-radius: 4px;
-}
-
-.sorting__view-item--selected {
-  border-color: var(--base-dark);
-}
-
 .sorting__view-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 48px;
+  height: 48px;
   padding: 8px;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 16px 14px;
 
+  border: 2px solid var(--base-gray-1);
+  border-radius: 4px;
+
   cursor: pointer;
+}
+
+.sorting__view-link:hover {
+  border-color: var(--base-dark);
+}
+
+.sorting__view-link:focus {
+  border-color: var(--secondary-blue);
+  outline: none;
+}
+
+.sorting__view-link:active {
+  border-color: var(--base-dark);
+}
+
+.sorting__view-link--selected {
+  border-color: var(--base-dark);
 }
 
 .sorting__view-item--cards {
@@ -1173,16 +1284,13 @@
 .pagination__item {
   width: 60px;
   height: 60px;
-
-  background-color: var(--base-blue);
-  border-radius: 4px;
 }
 
-.pagination__item--selected {
+.pagination__item--selected .pagination__link {
   background-color: var(--base-gray-2);
 }
 
-.pagination__item--ellipsis {
+.pagination__item--ellipsis .pagination__link {
   background-color: var(--base-white);
 }
 
@@ -1198,12 +1306,65 @@
   text-transform: uppercase;
   text-decoration: none;
   color: var(--base-white);
+
+  background-color: var(--base-blue);
+  border-radius: 4px;
 }
 
-.pagination__item--selected .pagination__link {
-  color: var(--base-dark);
+.pagination__link:hover {
+  background-color: var(--secondary-blue);
+  outline: 1px solid var(--base-blue);
 }
 
-.pagination__item--ellipsis .pagination__link {
+.pagination__link:focus {
+  background-color: var(--secondary-blue);
+  outline: 1px solid var(--base-blue);
+}
+
+.pagination__link:active {
+  color: var(--text-light-opacity-1);
+}
+
+.pagination__link--selected {
   color: var(--base-dark);
+  background-color: var(--base-gray-2);
+}
+
+.pagination__link--selected:hover {
+  color: var(--base-dark);
+  background-color: var(--base-gray-2);
+  outline: none;
+}
+
+.pagination__link--selected:focus {
+  color: var(--base-dark);
+  background-color: var(--base-gray-2);
+  outline: none;
+}
+
+.pagination__link--selected:active {
+  color: var(--base-dark);
+  background-color: var(--base-gray-2);
+}
+
+.pagination__link--ellipsis {
+  color: var(--base-dark);
+  background-color: var(--base-white);
+}
+
+.pagination__link--ellipsis:hover {
+  color: var(--base-dark);
+  background-color: var(--base-white);
+  outline: none;
+}
+
+.pagination__link--ellipsis:focus {
+  color: var(--base-dark);
+  background-color: var(--base-white);
+  outline: none;
+}
+
+.pagination__link--ellipsis:active {
+  color: var(--base-dark);
+  background-color: var(--base-white);
 }
