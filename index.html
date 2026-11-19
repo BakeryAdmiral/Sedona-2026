@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="fonts/ptsans-400.woff2" rel="preload" type="font/woff2" as="font">
+    <link href="fonts/ptsans-700.woff2" rel="preload" type="font/woff2" as="font">
+    <link rel="shortcut icon" href="./favicon.ico" />
     <link href="styles/styles.css" rel="stylesheet">
+    <script src="scripts/index.js" defer></script>
     <title>HTML Academy: Седона</title>
   </head>
   <body class="page__body">
@@ -149,7 +153,7 @@
           <div class="hotel-search__container">
             <p class="hotel-search__heading">ЗАИНТЕРЕСОВАЛИСЬ?</p>
             <p class="hotel-search__text">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-            <button class="hotel-search__button button" href="#">ПОИСК ГОСТИНИЦЫ В Седоне</button>
+            <button class="hotel-search__button button" type="button" data-js-modal-search-button-open>ПОИСК ГОСТИНИЦЫ В Седоне</button>
           </div>
         </section>
 
@@ -207,9 +211,9 @@
       </footer>
     </div>
 
-    <div class="modal-container">
+    <div class="modal-container" data-js-modal-search>
       <div class="modal modal--request">
-        <button class="modal__close-button" type="button">
+        <button class="modal__close-button" type="button" data-js-modal-search-button-close>
           <span class="visually-hidden">Закрыть</span>
         </button>
         <section class="modal__content">
